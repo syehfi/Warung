@@ -33,7 +33,10 @@
                 <td><?= $pd['harga'] ?></td>
                 <td><?= $pd['stok'] ?></td>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <td><img src="<?= base_url() ?>assets/upload/<?= $pd['gambar'] ?>" alt="" srcset=""></td>
+=======
+>>>>>>> parent of cf17427... Add Upload Image Function
 =======
 >>>>>>> parent of cf17427... Add Upload Image Function
                 <td>
