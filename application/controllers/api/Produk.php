@@ -68,12 +68,11 @@
         public function index_post()
         {
             $data = [
-                'nama_produk' => $this->post('nama_produk'),
-                'deskripsi' => $this->post('deskripsi'),
-                'kategori' => $this->post('kategori'),
-                'harga' => $this->post('harga'),
-                'stok' => $this->post('stok'),
-                'image' => $this->post('image')
+                'nama_produk' => $this->input->post('nama_produk'),
+                'deskripsi' => $this->input->post('deskripsi'),
+                'kategori' => $this->input->post('kategori'),
+                'harga' => $this->input->post('harga'),
+                'stok' => $this->input->post('stok')
             ];
             if ($this->produk->createProduk($data) > 0) {
                 $this->response([
@@ -97,7 +96,6 @@
                 'kategori' => $this->put('kategori'),
                 'harga' => $this->put('harga'),
                 'stok' => $this->put('stok'),
-                'image' => $this->put('image')
             ];
             if ($this->produk->updateProduk($data, $id)) {
                 $this->response([

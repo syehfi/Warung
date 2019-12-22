@@ -6,7 +6,7 @@
                 <div class="card-header">
                     Form Tambah Produk
                 </div>
-                    <form action="" method="post">                    
+                    <form action="" method="post"  enctype="multipart/form-data">                    
                         <div class="form-group">
                             <label for="nama_produk">Nama Produk</label>
                             <input type="text" name="nama_produk" id="nama_produk" class="form-control">
@@ -27,10 +27,12 @@
                             <label for="stok">Stok</label>
                             <input type="number" name="stok" id="stok" class="form-control">
                         </div>
+
                         <div class="form-group">
-                            <label for="stok">Gambar</label>
-                            <input type="file" name="image" id="image" class="form-control">
+                            <label for="stok">Image</label>
+                            <input type="file" name="userfile" class="form-control">
                         </div>
+
                         <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>
