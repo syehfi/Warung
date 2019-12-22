@@ -18,7 +18,7 @@ class client_produk_model extends CI_Model
 
     public function getAllProduk()
     {
-        $respose = $this->_client->request('GET', 'produk', [
+        $respone = $this->_client->request('GET', 'produk', [
             'query' => [
                 'api' => 'pesenkopi'
             ]

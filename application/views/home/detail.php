@@ -1,4 +1,9 @@
 <title>Detail Produk</title>
+
+<form action="<?php echo base_url('Katalog/addCart/'.$produk['id_produk']) ?>" method="post">
+<?php
+    print_r($this->cart->contents());
+?>
 <div class="container">
     <div class="row mt-3">
         <div class="col-md-6">
@@ -20,7 +25,12 @@
                         <label for=""><b>Stok: </b></label>
                         <?= $produk['stok'] ?>
                     </p>
+                    <div class="form-group">
+                        <label for="stok">Quantity</label>
+                        <input type="number" name="stok" id="stok" class="form-control">
+                    </div>
                     
+                    <button type="submit" class="btn btn-primary">Tambahkan ke Keranjang</button>
                     <a href="<?= base_url()?>katalog" class="btn btn-primary">Kembali</a>
                 
                 </div>
@@ -28,3 +38,4 @@
         </div>
     </div>
 </div>
+</form>

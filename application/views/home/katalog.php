@@ -9,7 +9,7 @@
         <h5 class="card-title"><?= $pd['nama_produk']?></h5>
         <p class="card-text"><?= $pd['deskripsi']?></p>
         <h5 class="card-title">Harga Rp. <?= $pd['harga']?></h5>
-        <a href="<?= base_url();?>katalog/detail/<?= $pd['id_produk']?>" class="btn btn-primary">Details</a>
+        <a href="<?= base_url();?>katalog/detail/<?= $pd['id_produk']?>" class="btn btn-primary">Add To Cart</a>
         </div>
     </div>
 <?php } ?>

@@ -11,6 +11,8 @@
             $this->load->model('client_produk_model', 'produk');
             $this->load->library('form_validation');
             $this->load->library('session');
+            $this->load->library('cart');
+
         }
         
     
@@ -20,6 +22,8 @@
             $this->load->view('./template/header_home', $data, FALSE);
             $this->load->view('home/index', $data);           
         }
+
+        
     
     }
     
