@@ -18,7 +18,6 @@
       <th scope="col">Kategori</th>
       <th scope="col">Harga</th>
       <th scope="col">Stok</th>
-      <th scope="col">Gambar</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -33,7 +32,10 @@
                 <td><?= $pd['kategori'] ?></td>
                 <td><?= $pd['harga'] ?></td>
                 <td><?= $pd['stok'] ?></td>
+<<<<<<< HEAD
                 <td><img src="<?= base_url() ?>assets/upload/<?= $pd['gambar'] ?>" alt="" srcset=""></td>
+=======
+>>>>>>> parent of cf17427... Add Upload Image Function
                 <td>
                     <a href="admin/detail/<?= $pd['id_produk']?>"><button type="button" class="btn btn-primary">Detail</button></a>
                     <a href="admin/ubah/<?= $pd['id_produk']?>"><button type="button" class="btn btn-warning">Edit</button></a>

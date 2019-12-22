@@ -76,8 +76,12 @@ class client_produk_model extends CI_Model
             'kategori' => $this->input->post('kategori'),
             'harga' => $this->input->post('harga'),
             'stok' => $this->input->post('stok'),
+<<<<<<< HEAD
             'api' => 'pesenkopi',
             'gambar' => $file_gambar
+=======
+            'api' => 'pesenkopi'
+>>>>>>> parent of cf17427... Add Upload Image Function
         ];
 
 

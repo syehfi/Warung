@@ -27,12 +27,15 @@
                             <label for="stok">Stok</label>
                             <input type="number" name="stok" id="stok" class="form-control">
                         </div>
+<<<<<<< HEAD
 
                         <div class="form-group">
                             <label for="stok">Image</label>
                             <input type="file" name="userfile" class="form-control">
                         </div>
 
+=======
+>>>>>>> parent of cf17427... Add Upload Image Function
                         <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>
