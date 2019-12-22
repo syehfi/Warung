@@ -27,6 +27,10 @@
                             <label for="stok">Stok</label>
                             <input type="number" name="stok" id="stok" class="form-control">
                         </div>
+                        <div class="form-group">
+                            <label for="stok">Gambar</label>
+                            <input type="file" name="image" id="image" class="form-control">
+                        </div>
                         <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>

@@ -53,6 +53,7 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('kategori', 'kategori', 'required');
 		$this->form_validation->set_rules('harga', 'harga', 'required');
 		$this->form_validation->set_rules('stok', 'stok', 'required');
+		$this->form_validation->set_rules('image', 'image', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('./template/header_admin');

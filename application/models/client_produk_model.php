@@ -16,6 +16,29 @@ class client_produk_model extends CI_Model
         ]);
     }
 
+    public function _uploadImage(){
+        $config['upload_path']          = './assets/product';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->id_produk;
+        $config['overwrite']            = true;
+        $config['max_size']             = 1024; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('image')) {
+            return $this->upload->data("file_name");
+        }
+        return "default.jpg";
+    }
+    public function _deleteImage($id){
+        $produk = $this->getbyidProduk($id);
+        var_dump($produk['image']);
+        if ($produk['image'] != "default.jpg") {
+            $filename = explode(".", $produk['image'])[0];
+            return array_map('unlink', glob(FCPATH . "assets/product/$filename.*"));
+        }
+    }
+
     public function getAllProduk()
     {
         $respose = $this->_client->request('GET', 'produk', [
@@ -56,6 +79,7 @@ class client_produk_model extends CI_Model
             'kategori' => $this->input->post('kategori'),
             'harga' => $this->input->post('harga'),
             'stok' => $this->input->post('stok'),
+            'image' => $this->_uploadImage(),
             'api' => 'pesenkopi'
         ];
         $respone = $this->_client->request('POST', 'produk', [
@@ -73,6 +97,7 @@ class client_produk_model extends CI_Model
             'kategori' => $this->input->post('kategori'),
             'harga' => $this->input->post('harga'),
             'stok' => $this->input->post('stok'),
+            'image' => $this->_uploadImage(),
             'api' => 'pesenkopi'
         ];
         $respone = $this->_client->request('PUT', 'produk', [
