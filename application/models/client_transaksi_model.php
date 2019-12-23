@@ -46,6 +46,19 @@ class client_transaksi_model extends CI_Model
         $result = json_decode($respone->getBody()->getContents(), true);
         return $result['data'];
     }
+
+    public function deleteIdTransaksi($id)
+    {
+        $respone = $this->_client->request('DELETE', 'transaksi', [
+            'form_params' => [
+                'id_transaksi' => $id,
+                'api' => 'pesenkopi'
+            ]
+        ]);
+        $result = json_decode($respone->getBody()->getContents(), true);
+        return $result;
+    }
+
     public function getJoinIDTransaksi($id)
     {
         $respone = $this->_client->request('GET', 'transaksi/join', [

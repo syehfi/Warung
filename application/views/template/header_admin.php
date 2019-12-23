@@ -22,6 +22,9 @@
         <a class="nav-link" href="<?= base_url()?>admin/tambah">Tambah Data</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="<?= base_url()?>admin/pembelian">Pembelian</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?= base_url('');?>login/Logout">Logout</a>
       </li>
     </ul>

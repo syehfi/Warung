@@ -84,4 +84,10 @@ class Admin extends CI_Controller
 		$this->load->view('./template/header_admin');
 		$this->load->view('./admin/transaksi', $data);
 	}
+
+	public function deleteTransaksi($id){
+		$this->trans->deleteIdTransaksi($id);
+		redirect('admin/pembelian');
+		
+	}
 }
