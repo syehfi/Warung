@@ -23,14 +23,26 @@
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url()?>home">Home<span class="sr-only">(current)</span></a>
       </li>
-      
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('');?>login/index">Login</a>
+        <a class="nav-link" href="<?= base_url()?>katalog">Katalog<span class="sr-only">(current)</span></a>
       </li>
-
+      <?php if($this->session->userdata('level')!="user"){ ?>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Login/Register
+        </a>
+        <div class="dropdown-menu text-white bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-white bg-dark" href="<?= base_url('');?>login/index">Login</a>
+          <a class="dropdown-item text-white bg-dark" href="<?= base_url('');?>register">Register</a>
+      </li>
+      <?php } else { ?>
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Katalog/viewCheckout')?>">Checkout</a>
+        <a class="nav-link" href="<?= base_url('Katalog/checkout')?>">Checkout</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('');?>login/logout">Logout</a>
+      </li>
+      <?php } ?>
     </ul>
   </div>
 </nav>

@@ -18,6 +18,7 @@
       <th scope="col">Kategori</th>
       <th scope="col">Harga</th>
       <th scope="col">Stok</th>
+      <th scope="col">Gambar</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -32,7 +33,6 @@
                 <td><?= $pd['kategori'] ?></td>
                 <td><?= $pd['harga'] ?></td>
                 <td><?= $pd['stok'] ?></td>
-
                 <td><img src="<?= base_url() ?>assets/upload/<?= $pd['gambar'] ?>" alt="" srcset=""></td>
                 <td>
                     <a href="admin/detail/<?= $pd['id_produk']?>"><button type="button" class="btn btn-primary">Detail</button></a>

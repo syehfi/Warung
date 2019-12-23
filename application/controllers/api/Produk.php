@@ -72,7 +72,8 @@
                 'deskripsi' => $this->input->post('deskripsi'),
                 'kategori' => $this->input->post('kategori'),
                 'harga' => $this->input->post('harga'),
-                'stok' => $this->input->post('stok')
+                'stok' => $this->input->post('stok'),
+                'gambar' => $this->input->post('gambar')
             ];
             if ($this->produk->createProduk($data) > 0) {
                 $this->response([

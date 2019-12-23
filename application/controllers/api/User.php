@@ -49,7 +49,7 @@
             $data = [
                 'username' => $this->post('username'),
                 'password' => $this->post('password'),
-                'level' => $this->post('level')
+                // 'level' => $this->post('level')
             ];
             if ($this->user->register($data) > 0) {
                 $this->response([
@@ -70,7 +70,7 @@
                 'id' => $this->put('id'),
                 'username' => $this->put('username'),
                 'password' => $this->put('password'),
-                'level' => $this->put('level')
+                
             ];
             if ($this->user->updateUser($data, $id)) {
                 $this->response([

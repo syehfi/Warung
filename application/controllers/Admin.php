@@ -8,6 +8,7 @@ class Admin extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('client_produk_model', 'produk');
+		$this->load->model('client_transaksi_model', 'trans');
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		if ($this->session->userdata('level')!="admin") {
@@ -45,6 +46,7 @@ class Admin extends CI_Controller
 			// redirect('admin');
 		}
 	}
+	
 	public function ubah($id)
 	{
 		$data['produk'] = $this->produk->getbyidProduk($id);
@@ -74,5 +76,12 @@ class Admin extends CI_Controller
 		$this->load->view('./admin/header');
 		$this->load->view('./admin/login');
 		$this->load->view('./admin/footer');
+	}
+
+	public function pembelian()
+	{
+		$data['transaksi'] = $this->trans->getAllJoin();
+		$this->load->view('./template/header_admin');
+		$this->load->view('./admin/transaksi', $data);
 	}
 }

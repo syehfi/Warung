@@ -3,14 +3,10 @@
 <head>
 <style>
   body{
-    background: rgba(2,195,229,1);
-    background: -moz-linear-gradient(left, rgba(2,195,229,1) 0%, rgba(3,72,141,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(2,195,229,1)), color-stop(100%, rgba(3,72,141,1)));
-    background: -webkit-linear-gradient(left, rgba(2,195,229,1) 0%, rgba(3,72,141,1) 100%);
-    background: -o-linear-gradient(left, rgba(2,195,229,1) 0%, rgba(3,72,141,1) 100%);
-    background: -ms-linear-gradient(left, rgba(2,195,229,1) 0%, rgba(3,72,141,1) 100%);
-    background: linear-gradient(to right, rgba(2,195,229,1) 0%, rgba(3,72,141,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02c3e5', endColorstr='#03488d', GradientType=1 );
+    background-image: url(../assets/image/back.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
 </style>
     <meta charset="UTF-8">

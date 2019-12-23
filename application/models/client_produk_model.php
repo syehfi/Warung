@@ -23,7 +23,7 @@ class client_produk_model extends CI_Model
                 'api' => 'pesenkopi'
             ]
         ]);
-        $result = json_decode($respose->getBody()->getContents(), true);
+        $result = json_decode($respone->getBody()->getContents(), true);
         return $result['data'];
     }
     public function getbyidProduk($id)
@@ -64,11 +64,9 @@ class client_produk_model extends CI_Model
 
         $file_gambar = "";
 
-        if ( $this->upload->do_upload('userfile'))
-        {
+        if ($this->upload->do_upload('userfile')) {
             $file_gambar = $this->upload->data('file_name');
-            
-        } 
+        }
 
         $data = [
             'nama_produk' => $this->input->post('nama_produk'),
@@ -76,18 +74,17 @@ class client_produk_model extends CI_Model
             'kategori' => $this->input->post('kategori'),
             'harga' => $this->input->post('harga'),
             'stok' => $this->input->post('stok'),
-            'api' => 'pesenkopi',
-            'gambar' => $file_gambar
+            'gambar' => $file_gambar,
+            'api' => 'pesenkopi'
         ];
 
 
-       
+
         $respone = $this->_client->request('POST', 'produk', [
             'form_params' => $data
         ]);
         $result = json_decode($respone->getBody()->getContents(), true);
         return $result;
-
     }
     public function ubahProduk()
     {
@@ -101,6 +98,21 @@ class client_produk_model extends CI_Model
             'api' => 'pesenkopi'
         ];
         $respone = $this->_client->request('PUT', 'produk', [
+            'form_params' => $data
+        ]);
+        $result = json_decode($respone->getBody()->getContents(), true);
+        return $result;
+    }
+    public function inputPesanan($ko)
+    {
+        $data = [
+            'id_user' => $ko['id_user'],
+            'id_produk' => $ko['id_produk'],
+            'total_harga' => $ko['total_harga'],
+            'qty' => $ko['qty'],
+            'api' => 'pesenkopi'
+        ];
+        $respone = $this->_client->request('POST', 'transaksi', [
             'form_params' => $data
         ]);
         $result = json_decode($respone->getBody()->getContents(), true);

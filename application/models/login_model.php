@@ -5,7 +5,7 @@
     class login_model extends CI_Model {
     
         function login($username, $password){
-            $this->db->select('username, password, level');
+            $this->db->select('id_user, username, password, level');
             $this->db->from('login');
             $this->db->where('username', $username);
             $this->db->where('password', $password);
@@ -23,5 +23,3 @@
     }
     
     /* End of file login_model.php */
-    
-?>
