@@ -5,7 +5,7 @@
     $i = 1;
     foreach($produk as $pd){?>
     <div class="card text-white bg-secondary mb-3">
-        <img class="card-img-top" src="<?= base_url();?>image/wallet.png" alt="Card image cap">
+        <img style="height: 300px; width:230px; margin-left:20px;" class="card-img-top" src="<?= base_url() ?>assets/upload/<?= $pd['gambar'] ?>" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title"><?= $pd['nama_produk']?></h5>
         <p class="card-text"><?= $pd['deskripsi']?></p>

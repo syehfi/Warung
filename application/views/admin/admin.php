@@ -33,7 +33,7 @@
                 <td><?= $pd['kategori'] ?></td>
                 <td><?= $pd['harga'] ?></td>
                 <td><?= $pd['stok'] ?></td>
-                <td><img src="<?= base_url() ?>assets/upload/<?= $pd['gambar'] ?>" alt="" srcset=""></td>
+                <td><img style="height: 200px; width:130px;" src="<?= base_url() ?>assets/upload/<?= $pd['gambar'] ?>" alt="" srcset=""></td>
                 <td>
                     <a href="admin/detail/<?= $pd['id_produk']?>"><button type="button" class="btn btn-primary">Detail</button></a>
                     <a href="admin/ubah/<?= $pd['id_produk']?>"><button type="button" class="btn btn-warning">Edit</button></a>

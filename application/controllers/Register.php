@@ -14,8 +14,6 @@
 	
 	public function index()
 	{
-		// $data['login'] = $this->produk->getAllUse();
-		$this->load->view('./template/header_admin');
 		$this->load->view('./register/register');
     }
     
@@ -25,13 +23,12 @@
 		$this->form_validation->set_rules('password', 'password', 'required');
 
 		if ($this->form_validation->run() == false) {
-			$this->load->view('./template/header_admin');
             $this->load->view('./register/register');
             
 		} else {
 			$this->user->addNewUser();
 			$this->session->set_flashdata('flash', 'Ditambahkan');
-			redirect('home/login');
+			redirect('login/index');
 		}
 	}
 }
