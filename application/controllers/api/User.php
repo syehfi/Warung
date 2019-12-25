@@ -23,24 +23,22 @@
 
         public function index_get()
         {
-            $username = $this->get('username');
-            $password = $this->get('password');
-            
-            if ($username === null && $password === null) {
-                $login_proses = $this->user->login(null, null);
+            $id = $this->get('id_user');
+            if ($id === null) {
+                $user = $this->user->getUser();
             } else {
-                $login_proses = $this->user->login($username, $password);
+                $user = $this->user->getUser($id);
             }
-            
-            if ($login_proses) {
+
+            if ($user) {
                 $this->response([
                     'status' => "true", 
-                    'data' => $login_proses
+                    'data' => $user
                 ], 200);
             } else {
                 $this->response([
                     'status' => "false", 
-                    'massage' => 'user not found'
+                    'massage' => 'id not found'
                 ], 404);
             }
         }
@@ -65,11 +63,12 @@
         }
         public function index_put()
         {
-            $id = $this->put('id');
+            $id = $this->put('id_user');
             $data = [
-                'id' => $this->put('id'),
+                'id_user' => $this->put('id_user'),
                 'username' => $this->put('username'),
                 'password' => $this->put('password'),
+                'level' => $this->put('level'),
                 
             ];
             if ($this->user->updateUser($data, $id)) {
@@ -82,6 +81,30 @@
                     'status' => false,
                     'massage' => 'Failed'
                 ], 400);
+            }
+        }
+
+        public function index_delete()
+        {
+            $id = $this -> delete('id_user');
+            if ($id === null) {
+                $this->response([
+                    'status' => "false",
+                    'massage' => 'provide an id!'
+                ], 404);
+            } else {
+                if ($this->user->deleteUser($id)>0) {
+                    $this->response([
+                        'status' => true,
+                        'id' => $id,
+                        'massage' => 'Deleted'
+                    ], 200);
+                } else {
+                    $this->response([
+                        'status' => false,
+                        'massage' => 'id not found'
+                    ], 400);
+                }
             }
         }
     

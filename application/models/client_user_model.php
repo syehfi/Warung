@@ -16,6 +16,39 @@ class client_user_model extends CI_Model
         ]);
     }
 
+    public function getAllUser()
+    {
+        $respone = $this->_client->request('GET', 'user', [
+            'query' => [
+                'api' => 'pesenkopi'
+            ]
+        ]);
+        $result = json_decode($respone->getBody()->getContents(), true);
+        return $result['data'];
+    }
+    public function getbyidUser($id)
+    {
+        $respone = $this->_client->request('GET', 'user', [
+            'query' => [
+                'id_user' => $id,
+                'api' => 'pesenkopi'
+            ]
+        ]);
+        $result = json_decode($respone->getBody()->getContents(), true);
+        return $result['data'][0];
+    }
+    public function deleteById($id)
+    {
+        $respone = $this->_client->request('DELETE', 'user', [
+            'form_params' => [
+                'id_user' => $id,
+                'api' => 'pesenkopi'
+            ]
+        ]);
+        $result = json_decode($respone->getBody()->getContents(), true);
+        return $result;
+    }
+
     public function addNewUser()
     {
 
@@ -31,6 +64,22 @@ class client_user_model extends CI_Model
         $result = json_decode($respone->getBody()->getContents(), true);
         return $result;
 
+    }
+
+    public function ubahUser()
+    {
+        $data = [
+            'id_user' => $this->input->post('id_user'),
+            'username' => $this->input->post('username'),
+            'password' => $this->input->post('password'),
+            'level' => $this->input->post('level'),
+            'api' => 'pesenkopi'
+        ];
+        $respone = $this->_client->request('PUT', 'user', [
+            'form_params' => $data
+        ]);
+        $result = json_decode($respone->getBody()->getContents(), true);
+        return $result;
     }
 }
     

@@ -86,6 +86,7 @@ class client_produk_model extends CI_Model
         $result = json_decode($respone->getBody()->getContents(), true);
         return $result;
     }
+
     public function ubahProduk()
     {
         $data = [
@@ -103,6 +104,7 @@ class client_produk_model extends CI_Model
         $result = json_decode($respone->getBody()->getContents(), true);
         return $result;
     }
+    
     public function inputPesanan($ko)
     {
         $data = [

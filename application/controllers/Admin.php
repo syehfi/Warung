@@ -9,6 +9,7 @@ class Admin extends CI_Controller
 		parent::__construct();
 		$this->load->model('client_produk_model', 'produk');
 		$this->load->model('client_transaksi_model', 'trans');
+		$this->load->model('client_user_model', 'user');
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		if ($this->session->userdata('level')!="admin") {
@@ -71,12 +72,6 @@ class Admin extends CI_Controller
 		$this->produk->deleteById($id);
 		redirect('admin');
 	}
-	public function login()
-	{
-		$this->load->view('./admin/header');
-		$this->load->view('./admin/login');
-		$this->load->view('./admin/footer');
-	}
 
 	public function pembelian()
 	{
@@ -89,5 +84,36 @@ class Admin extends CI_Controller
 		$this->trans->deleteIdTransaksi($id);
 		redirect('admin/pembelian');
 		
+	}
+
+	public function user()
+	{
+		$data['login'] = $this->user->getAllUser();
+		$this->load->view('./template/header_admin');
+		$this->load->view('./admin/user', $data);
+	}
+
+	public function ubahUser($id)
+	{
+		$data['login'] = $this->user->getbyidUser($id);
+		$this->form_validation->set_rules('username', 'username', 'required');
+		$this->form_validation->set_rules('password', 'password', 'required');
+		$this->form_validation->set_rules('level', 'level', 'required');
+		
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('./template/header_admin');
+			$this->load->view('./admin/edituser', $data);
+		} else {
+			$this->user->ubahUser();
+			$this->session->set_flashdata('flash', 'Diubah');
+			redirect('admin/user');
+		}
+	}
+
+	public function deleteUser($id)
+	{
+		$this->user->deleteById($id);
+		redirect('admin/user');
 	}
 }

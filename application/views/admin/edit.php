@@ -1,10 +1,10 @@
-<title>Tambah Produk</title>
+<title>Edit Produk</title>
 <div class="container">
     <div class="row mt-3">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    Form Tambah Produk
+                    Form Edit Produk
                 </div>
                     <form action="" method="post">
                         <input type="hidden" name="id_produk" value="<?= $produk['id_produk'] ?>">                    
