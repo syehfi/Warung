@@ -8,4 +8,4 @@ Last Change: <br>
 # Target Today
 ~~1. Add Register Function~~ <br>
 ~~2. Upload Image Function~~ <br>
-3. Transaction Function
+~~3. Transaction Function~~ <br>
