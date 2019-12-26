@@ -24,7 +24,6 @@
                                     <input class="form-control form-control-lg rounder-0" name="pwd1" id="pwd1" type="password"
                                     required="">
                                 </div>
-
                                 <button type="submit" class="btn btn-primary btn-lg float-right" id="brnLogin">Login</button>
                             </form>
                         </div>

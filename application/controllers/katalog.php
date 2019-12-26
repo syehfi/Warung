@@ -73,16 +73,6 @@ class Katalog extends CI_Controller
             
         }
     }
-
-    public function deleteCart($id)
-    {
-        $data = array(
-            'rowid'   => $id,
-            'qty'     => 0
-        );
-        $this->cart->update($data);
-        redirect('home', 'refresh');
-    }
 }
     
     /* End of file Katalog.php */
