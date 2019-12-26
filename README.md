@@ -1,5 +1,5 @@
 # Warung Game
-
+A online shopping about selling item or payment game
 # In Development
 Last Change: <br>
 ~~1. Add Login Function~~ <br>
