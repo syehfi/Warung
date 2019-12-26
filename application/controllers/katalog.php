@@ -74,7 +74,7 @@ class Katalog extends CI_Controller
         }
     }
 
-    public function deletCart($id)
+    public function deleteCart($id)
     {
         $data = array(
             'rowid'   => $id,

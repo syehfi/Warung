@@ -8,7 +8,7 @@
     <title>Admin Page</title>
 </head>
 <body>
-<h1 style="text-align: center;">Daftar Produk</h1><br>
+<h1 style="text-align: center;">Daftar User</h1><br>
 <table class="table">
   <thead>
     <tr>

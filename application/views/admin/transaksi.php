@@ -31,9 +31,7 @@
                 <td><?= $pd['Qty'] ?></td>
                 <td><?= $pd['total_harga'] ?></td>
                 <td>
-                    <a href="<?= base_url() ?>admin/deleteTransaksi/<?= $pd['id_transaksi']?>"><button type="button" class="btn btn-primary">Detail</button></a>
-                    <a href="<?= base_url() ?>admin/deleteTransaksi/<?= $pd['id_transaksi']?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                    <a href="<?= base_url() ?>admin/deleteTransaksi/<?= $pd['id_transaksi']?>"><button type="button" class="btn btn-danger">Hapus</button></a>
+                    <a href="<?= base_url() ?>admin/deleteTransaksi/<?= $pd['id_transaksi']?>"><button type="button" class="btn btn-primary">Approve</button></a>
                 </td>
             </tr>
         <?php } ?>

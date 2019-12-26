@@ -18,8 +18,8 @@
     <title>Register</title>
 </head>
 
-<body class="bg-darker" style="background: url(<?= base_url(); ?>image/a.jpg);">
-    <aside class="col-sm-12 bg-darker text-light" style="height: 80vh; display: flex; justify-content: center; align-items: center;">
+<body class="bg-darker" style="background: url(<?= base_url(); ?>image/back.png); background-size: cover;">
+    <aside class="col-sm-12 bg-darker text-light" style="height: 99vh; display: flex; justify-content: center; align-items: center; margin-right: 100px;">
         <div class="card bg-dark">
             <article class="card-body">
                 <h4 class="card-title mb-4 mt-1">Sign Up</h4>

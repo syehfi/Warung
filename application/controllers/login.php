@@ -42,11 +42,10 @@ class login extends CI_Controller
                 redirect('katalog');
             }
         } else {
-            $data['pesan'] = "Username dan Password anda salah";
             $data['title'] = 'Login';
             $this->load->view('template/login', $data);
             $this->load->view('login/index', $data);
-            redirect('login/index', 'refresh');
+            echo "<script>alert('Username dan Password tidak valid.'); window.location = 'index'</script>";	
         }
     }
     public function logout()
